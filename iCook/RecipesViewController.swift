@@ -9,7 +9,6 @@
 import UIKit
 
 class RecipesViewController: UITableViewController {
-    var testVariable = "Hello world"
 
     override func viewDidLoad() {
         super.viewDidLoad()
