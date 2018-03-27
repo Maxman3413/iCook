@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RecipesViewController: UITableViewController {
+    var testVariable = "Hello world"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +20,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
 
 
 }
