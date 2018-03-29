@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class RecipesViewController: UITableViewController {
+    
+    let databaseRef = Database.database().reference()
+    let storageRef = Storage.storage().reference()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {

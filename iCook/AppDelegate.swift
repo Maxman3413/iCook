@@ -7,17 +7,64 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
 
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Initialize Firebase
+        FirebaseApp.configure()
+        
+        // Initialize Google Login
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
     }
+    
+    
+    // Google Login Delegate Methods
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        // ...
+        if let error = error {
+            // ...
+            return
+        }
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                       accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            // User is signed in via Google
+            print("Successfully Logged in via Google!")
+            UserDefaults.standard.set("google", forKey: "preferredLoginMethod") // store preferred login method
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let recipesVC = storyboard.instantiateViewController(withIdentifier: "recipesVC") as! RecipesViewController
+            let loginVC = storyboard.instantiateViewController(withIdentifier: "loginVC") as! LoginViewController
+            self.window?.rootViewController = loginVC
+            self.window?.rootViewController?.present(recipesVC, animated: true, completion: nil)
+        }
+        
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -39,6 +86,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        @available(iOS 9.0, *)
+        func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+            -> Bool {
+                return GIDSignIn.sharedInstance().handle(url,     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        }
+        return true
     }
 
 

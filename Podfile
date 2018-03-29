@@ -6,12 +6,15 @@ target 'iCook' do
   use_frameworks!
 
   # Pods for iCook
+    pod 'Firebase/Core'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
 
   target 'iCookTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'Firebase/Core'
-    pod 'Firebase/Database'
   end
 
   target 'iCookUITests' do
