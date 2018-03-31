@@ -114,37 +114,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeTableViewCell" rowHeight="275" id="aiL-Ko-B8R">
-                                <rect key="frame" x="0.0" y="28" width="375" height="275"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeTableViewCell" rowHeight="300" id="aiL-Ko-B8R" customClass="RecipeTableViewCell" customModule="iCook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aiL-Ko-B8R" id="9ry-aS-eaL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="299.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fYK-TM-rgK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="274.5"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgo-hR-BJN">
-                                            <rect key="frame" x="0.0" y="-0.5" width="375" height="275"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SzN-q9-QNP">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </view>
-                                            <blurEffect style="light"/>
-                                        </visualEffectView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="atf-1f-eyL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMZ-1P-vMb">
+                                            <rect key="frame" x="101" y="125" width="172" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="172" id="sak-VD-PqS"/>
+                                                <constraint firstAttribute="height" constant="50" id="xzP-g7-OGC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Righteous-Regular" family="Righteous" pointSize="30"/>
+                                            <state key="normal" title="View Recipe!">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="goToRecipe:" destination="aiL-Ko-B8R" eventType="touchUpInside" id="6AQ-hI-Au9"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fYK-TM-rgK" firstAttribute="centerY" secondItem="9ry-aS-eaL" secondAttribute="centerY" id="AQe-Vm-4MC"/>
-                                        <constraint firstItem="Zgo-hR-BJN" firstAttribute="width" secondItem="fYK-TM-rgK" secondAttribute="width" id="DwC-2H-lld"/>
-                                        <constraint firstItem="Zgo-hR-BJN" firstAttribute="centerX" secondItem="fYK-TM-rgK" secondAttribute="centerX" id="Iqj-QM-xTc"/>
-                                        <constraint firstItem="Zgo-hR-BJN" firstAttribute="centerY" secondItem="fYK-TM-rgK" secondAttribute="centerY" id="PR1-JW-L7T"/>
-                                        <constraint firstItem="fYK-TM-rgK" firstAttribute="centerX" secondItem="9ry-aS-eaL" secondAttribute="centerX" id="Vha-Q8-mWe"/>
-                                        <constraint firstItem="fYK-TM-rgK" firstAttribute="width" secondItem="9ry-aS-eaL" secondAttribute="width" id="Y4e-Tg-GQ2"/>
-                                        <constraint firstItem="fYK-TM-rgK" firstAttribute="height" secondItem="9ry-aS-eaL" secondAttribute="height" id="cUM-FU-Ae6"/>
-                                        <constraint firstItem="Zgo-hR-BJN" firstAttribute="height" secondItem="fYK-TM-rgK" secondAttribute="height" id="cww-h8-eZD"/>
+                                        <constraint firstItem="atf-1f-eyL" firstAttribute="width" secondItem="9ry-aS-eaL" secondAttribute="width" id="ERT-N0-IUx"/>
+                                        <constraint firstItem="atf-1f-eyL" firstAttribute="centerY" secondItem="9ry-aS-eaL" secondAttribute="centerY" id="F3g-EX-sGm"/>
+                                        <constraint firstItem="atf-1f-eyL" firstAttribute="height" secondItem="9ry-aS-eaL" secondAttribute="height" id="Hdr-oP-vK0"/>
+                                        <constraint firstItem="HMZ-1P-vMb" firstAttribute="centerX" secondItem="atf-1f-eyL" secondAttribute="centerX" id="cHA-Du-jrr"/>
+                                        <constraint firstItem="atf-1f-eyL" firstAttribute="centerX" secondItem="9ry-aS-eaL" secondAttribute="centerX" id="js9-b0-06b"/>
+                                        <constraint firstItem="HMZ-1P-vMb" firstAttribute="centerY" secondItem="atf-1f-eyL" secondAttribute="centerY" id="mXh-Ib-a6H"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="recipeImage" destination="atf-1f-eyL" id="kYO-rO-f9I"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -156,7 +162,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jjw-LG-Kwj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="268" y="133"/>
+            <point key="canvasLocation" x="268" y="132.68365817091455"/>
         </scene>
     </scenes>
     <resources>

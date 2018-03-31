@@ -11,6 +11,8 @@
 		5370F84F206B033A00CE00E3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5370F84E206B033A00CE00E3 /* LoginViewController.swift */; };
 		5370F852206B20CA00CE00E3 /* Righteous-Regular.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 5370F851206B20AA00CE00E3 /* Righteous-Regular.ttf */; };
 		5370F853206B2DF100CE00E3 /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5370F851206B20AA00CE00E3 /* Righteous-Regular.ttf */; };
+		5383202B206F1FF4006A47C6 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383202A206F1FF4006A47C6 /* Recipe.swift */; };
+		5383202F206F259D006A47C6 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5383202E206F259D006A47C6 /* RecipeTableViewCell.swift */; };
 		538BB789206C70C300F8D618 /* ContinuedLaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538BB788206C70C300F8D618 /* ContinuedLaunchScreenViewController.swift */; };
 		53CF6865206AF6F900C78205 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53CF6864206AF6F900C78205 /* GoogleService-Info.plist */; };
 		53CF6866206AF6F900C78205 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53CF6864206AF6F900C78205 /* GoogleService-Info.plist */; };
@@ -49,6 +51,8 @@
 		5370F84D206B00DE00CE00E3 /* iCook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iCook.entitlements; sourceTree = "<group>"; };
 		5370F84E206B033A00CE00E3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5370F851206B20AA00CE00E3 /* Righteous-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Righteous-Regular.ttf"; sourceTree = "<group>"; };
+		5383202A206F1FF4006A47C6 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		5383202E206F259D006A47C6 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
 		538BB788206C70C300F8D618 /* ContinuedLaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuedLaunchScreenViewController.swift; sourceTree = "<group>"; };
 		53CF6864206AF6F900C78205 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53EF0BFC206AF170006005EF /* iCook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +140,10 @@
 			children = (
 				53EF0BFF206AF170006005EF /* AppDelegate.swift */,
 				53EF0C01206AF170006005EF /* RecipesViewController.swift */,
+				5383202E206F259D006A47C6 /* RecipeTableViewCell.swift */,
 				5370F84E206B033A00CE00E3 /* LoginViewController.swift */,
 				538BB788206C70C300F8D618 /* ContinuedLaunchScreenViewController.swift */,
+				5383202A206F1FF4006A47C6 /* Recipe.swift */,
 				53EF0C03206AF170006005EF /* Main.storyboard */,
 				53EF0C06206AF170006005EF /* Assets.xcassets */,
 				53EF0C08206AF170006005EF /* LaunchScreen.storyboard */,
@@ -414,6 +420,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iCook/Pods-iCook-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -422,6 +429,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -513,6 +521,8 @@
 				5370F852206B20CA00CE00E3 /* Righteous-Regular.ttf in Sources */,
 				538BB789206C70C300F8D618 /* ContinuedLaunchScreenViewController.swift in Sources */,
 				5370F84F206B033A00CE00E3 /* LoginViewController.swift in Sources */,
+				5383202F206F259D006A47C6 /* RecipeTableViewCell.swift in Sources */,
+				5383202B206F1FF4006A47C6 /* Recipe.swift in Sources */,
 				53EF0C02206AF170006005EF /* RecipesViewController.swift in Sources */,
 				53EF0C00206AF170006005EF /* AppDelegate.swift in Sources */,
 			);

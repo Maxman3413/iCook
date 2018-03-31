@@ -11,6 +11,7 @@ target 'iCook' do
     pod 'Firebase/Storage'
     pod 'Firebase/Auth'
     pod 'GoogleSignIn'
+    pod 'Alamofire', '~> 4.7'
 
   target 'iCookTests' do
     inherit! :search_paths
